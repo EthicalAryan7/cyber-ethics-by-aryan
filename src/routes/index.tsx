@@ -107,7 +107,7 @@ function Index() {
         <p className="mt-3 h-7 font-display text-base text-primary">
           &gt; {typed}<span className="caret">_</span>
         </p>
-        <p className="mt-2 text-lg text-muted-foreground">नमस्ते, आपका स्वागत है 🙏</p>
+        <p className="mt-2 text-lg text-muted-foreground">नमस्त, आपका स्वागत है</p>
 
         <div className="mt-8 w-full rise">
           <div className="w-full rounded-2xl rgb-border bg-card p-5 text-left backdrop-blur-md">
