@@ -161,8 +161,19 @@
   box-shadow: 0 0 18px var(--primary), 0 0 40px oklch(0.68 0.17 245 / 0.5);
   animation: rgb-shift 6s linear infinite;
 }
+@keyframes rgb-border {
+  0%   { border-color: #2b7fff; box-shadow: 0 0 14px #2b7fff99, 0 0 34px #2b7fff44; }
+  25%  { border-color: #b32bff; box-shadow: 0 0 14px #b32bff99, 0 0 34px #b32bff44; }
+  50%  { border-color: #ff2b7f; box-shadow: 0 0 14px #ff2b7f99, 0 0 34px #ff2b7f44; }
+  75%  { border-color: #2bffb0; box-shadow: 0 0 14px #2bffb099, 0 0 34px #2bffb044; }
+  100% { border-color: #2b7fff; box-shadow: 0 0 14px #2b7fff99, 0 0 34px #2b7fff44; }
+}
+@utility rgb-border {
+  border: 2px solid #2b7fff;
+  animation: rgb-border 6s linear infinite;
+}
 @utility rgb-text {
-  background: linear-gradient(90deg, oklch(0.68 0.17 245), oklch(0.75 0.2 330), oklch(0.8 0.18 150), oklch(0.68 0.17 245));
+  background: linear-gradient(90deg, #2b7fff, #b32bff, #ff2b7f, #2bffb0, #2b7fff);
   background-size: 300% 100%;
   -webkit-background-clip: text; background-clip: text; color: transparent;
   animation: rgb-move 4s linear infinite;
