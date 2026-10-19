@@ -142,3 +142,29 @@
     color: var(--color-foreground);
   }
 }
+
+:root {
+  --background: oklch(0.08 0.01 260);
+  --foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.68 0.17 245);
+  --primary-foreground: oklch(0.08 0.01 260);
+  --muted-foreground: oklch(0.75 0.04 245);
+  --card: oklch(0.1 0.02 260 / 0.6);
+  --border: oklch(0.68 0.17 245 / 0.5);
+}
+@theme inline {
+  --font-display: "Orbitron", sans-serif;
+  --font-sans: "Rajdhani", sans-serif;
+}
+@keyframes rgb-shift { 0%{filter:hue-rotate(0deg)} 100%{filter:hue-rotate(360deg)} }
+@utility rgb-glow {
+  box-shadow: 0 0 18px var(--primary), 0 0 40px oklch(0.68 0.17 245 / 0.5);
+  animation: rgb-shift 6s linear infinite;
+}
+@utility rgb-text {
+  background: linear-gradient(90deg, oklch(0.68 0.17 245), oklch(0.75 0.2 330), oklch(0.8 0.18 150), oklch(0.68 0.17 245));
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: rgb-move 4s linear infinite;
+}
+@keyframes rgb-move { to { background-position: 300% 0 } }
