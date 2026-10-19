@@ -168,3 +168,21 @@
   animation: rgb-move 4s linear infinite;
 }
 @keyframes rgb-move { to { background-position: 300% 0 } }
+@keyframes scan { 0%{transform:translateY(-100%)} 100%{transform:translateY(100vh)} }
+@utility scanline {
+  background: linear-gradient(to bottom, transparent, oklch(0.68 0.17 245 / 0.25), transparent);
+  animation: scan 4s linear infinite;
+}
+@utility grid-lines {
+  background-image: linear-gradient(oklch(0.68 0.17 245 / 0.12) 1px, transparent 1px), linear-gradient(90deg, oklch(0.68 0.17 245 / 0.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+@keyframes spin-slow { to { transform: rotate(360deg) } }
+@utility ring-spin {
+  background: conic-gradient(oklch(0.68 0.17 245), oklch(0.75 0.2 330), oklch(0.8 0.18 150), oklch(0.68 0.17 245));
+  animation: spin-slow 4s linear infinite;
+}
+@keyframes rise { from { opacity:0; transform: translateY(20px) } to { opacity:1; transform:none } }
+@utility rise { animation: rise .7s ease-out both; }
+@keyframes blink { 50% { opacity: 0 } }
+@utility caret { animation: blink 1s step-end infinite; }
