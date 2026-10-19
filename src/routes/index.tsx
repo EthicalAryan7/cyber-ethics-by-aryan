@@ -77,8 +77,9 @@ function Index() {
       {!entered && (
         <button onClick={enter} className="fixed inset-0 z-20 flex flex-col items-center justify-center gap-8 bg-background">
           <div className="pointer-events-none absolute inset-0 grid-lines" />
-          <div className="relative h-44 w-44 rounded-full p-1 ring-spin">
-            <img src={logo.url} alt="Ethical Aryan logo" className="h-full w-full rounded-full" />
+          <div className="relative h-44 w-44">
+            <div className="absolute -inset-1 rounded-full ring-spin" />
+            <img src={logo.url} alt="Ethical Aryan logo" className="relative h-full w-full rounded-full" />
           </div>
           <p className="font-display text-sm tracking-[0.4em] text-muted-foreground">SYSTEM READY</p>
           <span className="rounded-full rgb-border px-10 py-3 font-display text-lg tracking-widest text-primary rgb-glow">
@@ -93,10 +94,11 @@ function Index() {
         </button>
       )}
 
-      <section className="relative z-10 mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-5 py-14 text-center">
+      <section className="relative z-10 mx-auto flex min-h-screen max-w-xl flex-col items-center px-5 py-16 text-center">
         <div className="rise">
-          <div className="relative h-36 w-36 rounded-full p-1 ring-spin">
-            <img src={logo.url} alt="Ethical Aryan logo" className="h-full w-full rounded-full" />
+          <div className="relative h-36 w-36">
+            <div className="absolute -inset-1 rounded-full ring-spin" />
+            <img src={logo.url} alt="Ethical Aryan logo" className="relative h-full w-full rounded-full" />
           </div>
         </div>
         <div className="mt-6 rise">
