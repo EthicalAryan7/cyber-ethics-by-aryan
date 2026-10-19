@@ -33,7 +33,7 @@ function useTyping() {
   useEffect(() => {
     let i = 0, c = 0, del = false;
     const id = setInterval(() => {
-      const w = roles[i];
+      const w = roles[i] ?? "";
       c += del ? -1 : 1;
       setT(w.slice(0, c));
       if (!del && c === w.length + 8) del = true;
