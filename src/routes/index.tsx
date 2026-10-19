@@ -81,29 +81,34 @@ function Index() {
             <img src={logo.url} alt="Ethical Aryan logo" className="h-full w-full rounded-full" />
           </div>
           <p className="font-display text-sm tracking-[0.4em] text-muted-foreground">SYSTEM READY</p>
-          <span className="rounded-full border-2 border-primary px-10 py-3 font-display text-lg tracking-widest text-primary rgb-glow">
+          <span className="rounded-full rgb-border px-10 py-3 font-display text-lg tracking-widest text-primary rgb-glow">
             ENTER
           </span>
         </button>
       )}
 
       {entered && (
-        <button onClick={toggle} aria-label="Toggle sound" className="fixed right-4 top-4 z-30 rounded-full border-2 border-primary bg-card p-3 text-primary backdrop-blur-md rgb-glow">
+        <button onClick={toggle} aria-label="Toggle sound" className="fixed right-4 top-4 z-30 rounded-full rgb-border bg-card p-3 text-primary backdrop-blur-md rgb-glow">
           {muted ? <VolumeX size={20} /> : <Volume2 size={20} />}
         </button>
       )}
 
       <section className="relative z-10 mx-auto flex min-h-screen max-w-xl flex-col items-center justify-center px-5 py-14 text-center">
-        <div className="relative h-36 w-36 rounded-full p-1 ring-spin rise">
-          <img src={logo.url} alt="Ethical Aryan logo" className="h-full w-full rounded-full" />
+        <div className="rise">
+          <div className="relative h-36 w-36 rounded-full p-1 ring-spin">
+            <img src={logo.url} alt="Ethical Aryan logo" className="h-full w-full rounded-full" />
+          </div>
         </div>
-        <h1 className="mt-6 font-display text-4xl font-extrabold rgb-text rise">Ethical Aryan</h1>
+        <div className="mt-6 rise">
+          <h1 className="font-display text-4xl font-extrabold rgb-text">Ethical Aryan</h1>
+        </div>
         <p className="mt-3 h-7 font-display text-base text-primary">
           &gt; {typed}<span className="caret">_</span>
         </p>
         <p className="mt-2 text-lg text-muted-foreground">नमस्ते, आपका स्वागत है 🙏</p>
 
-        <div className="mt-8 w-full rounded-2xl border-2 border-primary bg-card p-5 text-left backdrop-blur-md rgb-glow rise">
+        <div className="mt-8 w-full rise">
+          <div className="w-full rounded-2xl rgb-border bg-card p-5 text-left backdrop-blur-md">
           <div className="mb-4 flex items-center gap-2 border-b border-border pb-3">
             <span className="h-3 w-3 rounded-full bg-destructive" />
             <span className="h-3 w-3 rounded-full bg-chart-4" />
@@ -111,16 +116,21 @@ function Index() {
             <span className="ml-2 font-display text-xs tracking-widest text-muted-foreground">about_me.sh</span>
           </div>
           <ul className="space-y-3">
-            {info.map(({ k, v, I }, i) => (
+            {info.map(({ k, v, I, href }, i) => (
               <li key={k} style={{ animationDelay: `${0.2 + i * 0.1}s` }} className="flex items-center gap-3 rounded-xl border border-border bg-background/40 p-3 rise">
-                <span className="rounded-lg border border-primary p-2 text-primary"><I size={20} /></span>
-                <div>
+                <span className="rounded-lg rgb-border p-2 text-primary"><I size={20} /></span>
+                <div className="min-w-0">
                   <p className="text-xs uppercase tracking-widest text-muted-foreground">{k}</p>
-                  <p className="text-lg font-semibold text-foreground">{v}</p>
+                  {href ? (
+                    <a href={href} className="break-all text-lg font-semibold text-primary hover:underline">{v}</a>
+                  ) : (
+                    <p className="text-lg font-semibold text-foreground">{v}</p>
+                  )}
                 </div>
               </li>
             ))}
           </ul>
+          </div>
         </div>
         <p className="mt-8 font-display text-xs tracking-[0.3em] text-muted-foreground">© ETHICAL ARYAN</p>
       </section>
