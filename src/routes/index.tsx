@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { User, Cake, Shield, Cpu, Terminal, Globe, Volume2, VolumeX } from "lucide-react";
+import { User, Cake, Shield, Cpu, Terminal, Globe, Volume2, VolumeX, Mail, type LucideIcon } from "lucide-react";
 import bg from "@/assets/bg.mp4.asset.json";
 import logo from "@/assets/logo.jpg.asset.json";
 
@@ -18,13 +18,16 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const info = [
+type Info = { k: string; v: string; I: LucideIcon; href?: string };
+const EMAIL = "Ethicalaryan7@gmail.com";
+const info: Info[] = [
   { k: "Full Name", v: "Aryan Pratap Singh", I: User },
   { k: "Age", v: "18 yr", I: Cake },
   { k: "Interest", v: "Ethical, Cyber Security", I: Shield },
   { k: "Hobby", v: "Techie", I: Cpu },
   { k: "Talent", v: "Hacking", I: Terminal },
   { k: "Skill", v: "Good Knowledge about Internet", I: Globe },
+  { k: "Email", v: EMAIL, I: Mail, href: `mailto:${EMAIL}` },
 ];
 const roles = ["Ethical Hacker", "Cyber Security", "Techie", "Internet Explorer"];
 
